@@ -8,7 +8,7 @@ from app.database import db
 # FastAPI 앱 생성
 app = FastAPI(
     title="사용자 관리 API",
-    description="FastAPI와 MongoDB를 사용한 사용자 관리 API",
+    description="FastAPI와 MongoDB를 사용한 사용자 관리 API (이메일로 로그인)",
     version="0.1.0",
 )
 

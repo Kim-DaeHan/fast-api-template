@@ -1,5 +1,5 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import settings
+from app.config import settings
 
 class Database:
     """데이터베이스 연결을 관리하는 클래스"""

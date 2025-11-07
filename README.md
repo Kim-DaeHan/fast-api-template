@@ -16,8 +16,9 @@ MongoDB를 데이터베이스로 사용하여 구현한 사용자 관리 API입�
 
 ### 필수 요구사항
 
-- Python 3.8 이상
+- Python 3.11 이상
 - MongoDB
+- [uv](https://docs.astral.sh/uv/) (Python 패키지 관리 도구)
 
 ### 설치 과정
 
@@ -28,17 +29,20 @@ git clone <repository-url>
 cd fast-api-template
 ```
 
-2. 가상환경 생성 및 활성화
+2. uv 설치 (설치되어 있지 않은 경우)
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 3. 의존성 설치
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 4. 환경 변수 설정
@@ -55,14 +59,18 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 ### 실행
 
+**개발 환경 (권장):**
 ```bash
-python main.py
+uv run poe dev
 ```
 
-또는
-
+**또는 직접 실행:**
 ```bash
-uvicorn main:app --reload
+# Python 모듈로 실행
+uv run python -m app.main
+
+# uvicorn CLI로 실행
+uv run uvicorn app.main:app --reload
 ```
 
 ## API 문서

@@ -8,7 +8,7 @@ from jose import JWTError, jwt
 from app.models.token import TokenData
 from app.models.user import UserRole
 from app.repositories.user_repository import get_user_by_id
-from config import settings
+from app.config import settings
 
 # OAuth2 스키마 설정 - 이메일로 로그인
 oauth2_scheme = OAuth2PasswordBearer(

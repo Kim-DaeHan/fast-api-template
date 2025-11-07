@@ -25,6 +25,10 @@ MANIFEST
 venv/
 env/
 ENV/
+.venv/
+
+# uv
+.uv_cache/
 
 # IDE
 .idea/

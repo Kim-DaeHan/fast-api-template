@@ -1,0 +1,29 @@
+[project]
+name = "fast-api-template"
+version = "0.1.0"
+description = "FastAPI template with MongoDB and JWT authentication"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.12",
+    "uvicorn==0.34.2",
+    "pydantic==2.6.1",
+    "motor==3.3.2",
+    "pymongo==4.5.0",
+    "python-jose==3.3.0",
+    "passlib==1.7.4",
+    "bcrypt==4.1.2",
+    "python-multipart==0.0.20",
+    "email-validator==2.1.0.post1",
+    "python-dotenv==1.0.1",
+]
+
+[tool.poe.tasks]
+dev = "uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload"
+start = "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+prod = "uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4"
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.37.0",
+]

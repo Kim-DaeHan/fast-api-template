@@ -8,7 +8,7 @@ from app.models.user import UserCreate, UserResponse
 from app.repositories.user_repository import create_user, get_user_by_email
 from app.security.jwt import create_access_token
 from app.security.password import verify_password
-from config import settings
+from app.config import settings
 
 router = APIRouter(prefix="/auth", tags=["인증"])
 
